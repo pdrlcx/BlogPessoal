@@ -9,5 +9,5 @@ import com.generation.BlogPessoal.model.Postagem;
 @Repository
 public interface PostagemRepository extends JpaRepository<Postagem, Long> {
 
-	public List<Postagem> findAllByTituloPostContainingIgnoreCase (String titulopostagem);
+	public List<Postagem> findAllByTituloPostContainingIgnoreCase (String tituloPost);
 }
