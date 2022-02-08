@@ -1,5 +1,6 @@
 package com.generation.BlogPessoal.controller;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.generation.BlogPessoal.model.Tema;
 import com.generation.BlogPessoal.repository.TemaRepository;
 
+
 @RestController
 @RequestMapping("/tema")
 @CrossOrigin("*")
@@ -31,14 +33,15 @@ public class TemaController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
+	
 	@GetMapping("/{idTema}")
 	public ResponseEntity<Tema> getById(@PathVariable Long idTema) {
 		return repository.findById(idTema).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("/{tema}")
-	public ResponseEntity<List<Tema>> getByTema(@PathVariable String tema) {
-		return ResponseEntity.ok(repository.findAllByTemaContainingIgnoreCase(tema));
+	@GetMapping("/descricao/{descricao}")
+	public ResponseEntity<List<Tema>> getByTema(@PathVariable String descricao) {
+		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
 	}
 	
 	@PostMapping("/novoTema")
