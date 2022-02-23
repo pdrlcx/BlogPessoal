@@ -8,6 +8,7 @@ public class UsuarioLogin {
 	private String senhaUsuario;
 	private String fotoUsuario;
 	private String TokenUsuario;
+	private String tipoUsuario;
 	
 	public Long getIdUsuario() {
 		return idUsuario;
@@ -45,6 +46,14 @@ public class UsuarioLogin {
 	public void setTokenUsuario(String tokenUsuario) {
 		TokenUsuario = tokenUsuario;
 	}
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+	
+	
 	
 	
 

@@ -57,6 +57,7 @@ public class UsuarioService {
                 usuarioLogin.get().setFotoUsuario(usuario.get().getFotoUsuario());
                 usuarioLogin.get().setTokenUsuario(generatorBasicTokenUsuario(usuarioLogin.get().getEmailUsuario(), usuarioLogin.get().getSenhaUsuario()));
                 usuarioLogin.get().setSenhaUsuario(usuario.get().getSenhaUsuario());
+                usuarioLogin.get().setTipoUsuario(usuario.get().getTipoUsuario());
 
                 return usuarioLogin;
             }
@@ -83,6 +84,7 @@ public class UsuarioService {
         String structure = usuario + ":" + password;
         byte[] structureBase64 = Base64.encodeBase64(structure.getBytes(Charset.forName("US-ASCII")));
         return "Basic " + new String(structureBase64);
+        
     }
 
 	
